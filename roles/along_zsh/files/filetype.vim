@@ -1,0 +1,1 @@
+au BufRead,BufNewFile /etc/nginx/*,/etc/nginx/conf.d/*,/usr/local/sinasrv5/etc_8080/conf.d/*,/usr/local/sinasrv5/etc_8080/*，/usr/local/sinasrv5/etc/conf.d/*,/usr/local/sinasrv5/etc/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif

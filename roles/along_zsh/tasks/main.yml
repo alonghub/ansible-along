@@ -1,0 +1,32 @@
+---
+- name: copy zsh rpm pkg
+  copy: src=zsh-5.0.2-34.el7_8.2.x86_64.rpm dest=/tmp/zsh-5.0.2-34.el7_8.2.x86_64.rpm
+
+- name: install zsh rpm from a local file
+  yum:
+    name: /tmp/zsh-5.0.2-34.el7_8.2.x86_64.rpm
+    state: present
+
+- name: copy ohmyzsh pkg
+  copy: src=dot-oh-my-zsh.tar.gz dest=/tmp/dot-oh-my-zsh.tar.gz
+
+- name: Unarchive a file that is already on the remote machine
+  unarchive:
+    src: /tmp/dot-oh-my-zsh.tar.gz
+    dest: /root/
+    remote_src: yes
+
+- name: copy ohmyzsh config for along team
+  copy: src=along-zsh-template dest=/root/.zshrc
+  
+- name: change shell zsh
+  shell: chsh -s /bin/zsh
+
+- name: create directory for vim config
+  file: path="/root/.vim/syntax" state=directory mode=0755
+
+- name: copy vim config file for nginx
+  copy: src=nginx.vim dest=/root/.vim/syntax/nginx.vim
+
+- name: copy vim config file for nginx conf file
+  copy: src=filetype.vim dest=/root/.vim/filetype.vim

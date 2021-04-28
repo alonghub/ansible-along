@@ -1,0 +1,11 @@
+---
+- hosts: all_ip
+  # gather_facts: no
+  roles:
+    - role: motd
+      tags:
+        - BASE
+    
+    - role: along_zsh
+      tags:
+        - BASE

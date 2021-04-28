@@ -1,0 +1,3 @@
+---
+- name: copy motd.sh
+  copy: src=motd.sh dest=/etc/profile.d/motd.sh mode=0755
