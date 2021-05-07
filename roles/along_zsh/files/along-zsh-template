@@ -97,3 +97,16 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+############## env ##############
+# go
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin
+
+# python
+export PYROOT=/usr/local/python3
+export PATH=$PATH:$PYROOT/bin
+
+# node
+export NODEROOT=/usr/local/node
+export PATH=$PATH:$NODEROOT/bin
